@@ -1,0 +1,425 @@
+*{
+    font-family: 'Roboto', 'Poppins';
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root{
+    --background: rgba(49, 7, 51, 0.95); 
+}
+
+
+main{
+    padding-top: 100px;
+}
+
+.skip-nav-link {
+    position: absolute;
+    transform: translateY(-120%);
+}
+
+.skip-nav-link:focus {
+    transform: translateY(0);
+    color: whitesmoke;
+}
+
+header {
+    background:var(--background);
+    text-align: center;
+    position:fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+.logo {
+    color: whitesmoke;
+    margin: 15px;
+    padding: 20px;
+    font-size: 1.9rem;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top:0; 
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span, 
+.nav-toggle-label span::before, 
+.nav-toggle-label span::after {
+    display: block;
+    background-color: #fff;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+
+}
+
+.nav-toggle-label span::before, 
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before{
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after{
+    top: 7px;
+}
+
+nav{
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background:var(--background);
+    width: 100%; 
+    transform:scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin:0; 
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+nav a:hover{
+    color: rgb(34, 124, 122);
+}
+
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~nav a {
+    opacity: 1;
+    transition: opacity 10ms ease-in-out;
+}
+
+
+
+
+
+@media screen and (min-width: 800px) {
+
+    .nav-toggle-label{
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo{
+        grid-column: 1/ span 1;
+    }
+
+    nav {
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1,1);
+        background: none;;
+        top: initial;
+        left: initial;
+        grid-column: 3/ 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+    
+    }
+
+    nav li {
+        margin-left: 2em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position:relative;
+    }
+
+    nav a::before{
+        content:'';
+        display: block;
+        height: 5px;
+        background: rgb(255, 255, 255);
+        position: absolute;
+        top: -.75em;
+        left: 0; 
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        transform: scale(1,1);
+      }
+
+    nav a:active{
+        background: rgb(255, 255, 255);
+    }
+
+    li a.active{
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        padding: 8px;
+    }
+ 
+    }
+
+/* INDEX PAGE */
+
+.indexbanner {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-image: url('/images/backgroundhero.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 10%;
+}
+
+
+
+.indexbanner h1 {
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px rgb(194, 196, 70) 8px;
+    line-height: 70px;
+    margin-bottom: 5%;
+
+}
+
+.indexbanner p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 1%;
+}
+
+
+
+@media  screen and (min-width:800px) {
+
+    .indexbanner h1 {
+        font-size: 5em;
+        line-height: 1.5em;
+    }
+
+    .indexbanner h1 {
+        margin-bottom: 2%;
+    }
+
+
+}
+
+/* ABOUT PAGE */
+
+.container2 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 3rem;
+    margin-top: 4rem;
+    text-align: center;
+
+}
+
+h1 {
+     color: blueviolet;
+     font-size: 5rem;
+     font-weight: 700;
+     letter-spacing: 8px;
+     margin-bottom: 2rem;
+     font-family: Roboto;
+}
+
+h2 {
+    color: rgb(88, 48, 125);
+    font-family: Roboto;
+    font-size: 2rem; 
+    font-weight: 400;
+}
+
+.headshot{
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+}
+
+.headshot img {
+    border-radius: 250px;
+    text-align: center;
+}
+
+.headshot img:hover {
+    background: black;
+    opacity: 0.3;
+}
+
+p {
+    font-size: 1rem;
+    color: black;
+    line-height: 3rem;
+    margin-bottom: 5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 3rem;
+    margin-bottom: 3rem;
+    background-color: blueviolet;
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: rgba(165, 90, 236, 0.742);
+}
+
+
+
+
+
+/* PROJECTS GALLERY */
+
+.main {
+    padding-top: 150px;
+}
+
+.galtitle{
+    font-size: 75px;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.container {
+    max-width: 100rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+
+.stacked {
+    display: grid;
+}
+
+.stacked > * {
+    grid-column: 1 / 2;
+    grid-row:1 / 2
+}
+
+.project-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+
+.card {
+    aspect-ratio: 1/ 1.5;
+}
+
+.card:hover {
+    color: rgb(12, 3, 21);
+    cursor: pointer;
+}
+
+
+
+.card__content{
+    background: white;
+    align-self: end;
+    margin: .5rem .5rem 2rem;
+    padding: .5rem;
+    box-shadow: 0 .2rem 1rem rgb(0 0 0 / .1);
+}
+
+.card__content h2 {
+    font-size: 28px;
+    font-family: 'Poppins';
+}
+
+.card__content h2:hover {
+    color: rgb(152, 75, 228);
+    cursor: pointer;
+}
+
+.card__content p {
+    font-size: 18px;
+    font-family: 'Roboto';
+    margin: 0;
+    line-height: 25px;
+}
+
+
+.card__img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit:cover;
+    padding: 2px;
+    margin: 2px;
+}
+
+.card__img:hover {
+    color: black;
+    opacity: 0.3;
+}
+
+@media (min-width: 40em) {
+
+    .card.featured {
+        grid-row: span 2; 
+        grid-column: span 2;
+    }
+    
+    .card.featured .card__img {
+        aspect-ratio: 1 / 1.25;
+    }
+
+}
